@@ -106,8 +106,8 @@ app.layout = html.Div(children=[
                                         ),
                                         dcc.Dropdown(id='input-year', 
                                                      # Update dropdown values using list comphrehension
-                                                     options=[{'label': 'Yearly Airline Performance Report', 'value':OPT1 } for i in year_list],
-                                                     placeholder='Select a report type',
+                                                     options=[{'label': 'i', 'value': 'i' } for i in year_list],
+                                                     placeholder='Select a year',
                                                      style={'width':'80%', 'padding':'3px', 'font-size': '20px', 'text-align-last' : 'center'}),
                                             # Place them next to each other using the division style
                                             ], style={'display': 'flex'}),  
@@ -163,7 +163,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
             
             # TASK5: Average flight time by reporting airline
             # Enter your code below. Make sure you have correct formatting.
-            figure_name = line_fig(line_data, x='Month', y='AirTime', 
+            line_fig = px.line(line_data, x='Month', y='AirTime', 
             color='Reporting_Airline', title='Average monthly flight time (minutes) by airline')
 
             
